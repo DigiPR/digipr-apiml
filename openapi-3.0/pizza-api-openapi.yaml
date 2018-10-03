@@ -1,0 +1,116 @@
+openapi: 3.0.0
+info:
+  title: pizza-api
+  description: APIML Example
+  contact:
+    name: Andreas Martin
+    url: 'https://www.andreas-martin.com'
+  license:
+    name: Apache License 2.0
+    url: 'https://github.com/DigiPR/digipr-apiml/blob/master/LICENSE'
+  version: 1.0.0
+paths:
+  /orders:
+    post:
+      operationId: createOrders
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+      requestBody:
+        $ref: '#/components/requestBodies/OrderRequest'
+    get:
+      operationId: findOrders
+      parameters:
+        - name: pizza
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: curst
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderResponse'
+  '/orders/{orderId}':
+    delete:
+      operationId: deleteOrder
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    get:
+      operationId: readOrder
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+    put:
+      operationId: updateOrder
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+      requestBody:
+        $ref: '#/components/requestBodies/OrderRequest'
+servers:
+  - url: 'http://localhost:8080/api'
+components:
+  requestBodies:
+    OrderRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OrderRequest'
+  schemas:
+    OrderRequest:
+      type: object
+      properties:
+        pizza:
+          type: string
+        crust:
+          type: string
+    OrderResponse:
+      type: object
+      properties:
+        orderId:
+          type: string
+        pizza:
+          type: string
+        crust:
+          type: string

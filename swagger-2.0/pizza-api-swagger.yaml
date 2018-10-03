@@ -1,0 +1,116 @@
+---
+swagger: "2.0"
+info:
+  title: "pizza-api"
+  description: "APIML Example"
+  contact:
+    name: "Andreas Martin"
+    url: "https://www.andreas-martin.com"
+  license:
+    name: "Apache License 2.0"
+    url: "https://github.com/DigiPR/digipr-apiml/blob/master/LICENSE"
+  version: "1.0.0"
+host: "localhost:8080"
+basePath: "/api"
+schemes:
+- "http"
+paths:
+  /orders:
+    post:
+      operationId: "createOrders"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "orderrequest"
+        schema:
+          $ref: "#/definitions/OrderRequest"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/OrderResponse"
+    get:
+      operationId: "findOrders"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "pizza"
+        in: "query"
+        type: "string"
+        required: false
+      - name: "curst"
+        in: "query"
+        type: "string"
+        required: false
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/OrderResponse"
+  /orders/{orderId}:
+    delete:
+      operationId: "deleteOrder"
+      parameters:
+      - name: "orderId"
+        in: "path"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
+    get:
+      operationId: "readOrder"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "orderId"
+        in: "path"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/OrderResponse"
+    put:
+      operationId: "updateOrder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "orderId"
+        in: "path"
+        type: "string"
+        required: true
+      - in: "body"
+        name: "orderrequest"
+        schema:
+          $ref: "#/definitions/OrderRequest"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/OrderResponse"
+definitions:
+  OrderRequest:
+    type: "object"
+    properties:
+      pizza:
+        type: "string"
+      crust:
+        type: "string"
+  OrderResponse:
+    type: "object"
+    properties:
+      orderId:
+        type: "string"
+      pizza:
+        type: "string"
+      crust:
+        type: "string"

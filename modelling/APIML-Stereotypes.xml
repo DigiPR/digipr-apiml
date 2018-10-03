@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Stereotypes version="20090707">
+	<ApplicationStereotypes>
+        <Stereotype abstract="false" baseType="Class" documentation="" leaf="false" name="API" root="false">
+            <Formats>
+                <Fill color1="Cr:255,192,192,255" color2="Cr:0,0,0,255" gradientStyle="1" transparency="0" type="1"/>
+            </Formats>
+        </Stereotype>
+        <Stereotype abstract="false" baseType="Class" documentation="" leaf="false" name="Resource" root="false">
+            <Formats>
+                <Fill color1="Cr:192,192,255,255" color2="Cr:0,0,0,255" gradientStyle="1" transparency="0" type="1"/>
+            </Formats>
+        </Stereotype>
+        <Stereotype abstract="false" baseType="Class" documentation="" leaf="false" name="Body" root="false">
+            <Formats>
+                <Fill color1="Cr:192,255,192,255" color2="Cr:0,0,0,255" gradientStyle="1" transparency="0" type="1"/>
+            </Formats>
+        </Stereotype>
+        <Stereotype abstract="false" baseType="Dependency" documentation="" leaf="false" name="Path" root="false"/>
+		<Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="GET" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="HEAD" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="POST" root="false"/>
+		<Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="PUT" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="DELETE" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="CONNECT" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="OPTIONS" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="TRACE" root="false"/>
+        <Stereotype abstract="false" baseType="Operation" documentation="" leaf="false" name="PATCH" root="false"/>
+		<Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="Request" root="false"/>
+		<Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="Response" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="GET" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="POST" root="false"/>
+		<Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="PUT" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="DELETE" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="CONNECT" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="OPTIONS" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="TRACE" root="false"/>
+        <Stereotype abstract="false" baseType="Association" documentation="" leaf="false" name="PATCH" root="false"/>
+	</ApplicationStereotypes>
+</Stereotypes>
