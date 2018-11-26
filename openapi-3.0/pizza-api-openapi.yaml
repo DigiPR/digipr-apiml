@@ -30,7 +30,7 @@ paths:
           required: false
           schema:
             type: string
-        - name: curst
+        - name: crust
           in: query
           required: false
           schema:

@@ -41,7 +41,7 @@ paths:
         in: "query"
         type: "string"
         required: false
-      - name: "curst"
+      - name: "crust"
         in: "query"
         type: "string"
         required: false
